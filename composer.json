@@ -1,0 +1,7 @@
+{
+    "require": {
+        "mikecao/flight": "^1.2",
+        "imagine/imagine": "^0.6.2",
+        "digitalnature/php-ref": "^1.0"
+    }
+}
