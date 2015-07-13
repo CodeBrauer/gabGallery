@@ -1,0 +1,1 @@
+d=document,w=window,c=console;

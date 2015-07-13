@@ -1,0 +1,28 @@
+/* Colors */
+
+// http://coolors.co/app/fafafa-a9e190-8fc93a-1eecfc-1e64cd
+
+$white: #fafafa;
+$lightgreen: #a9e190;
+$green: #8fc93a;
+$lightblue: #1eecfc;
+$blue: #1e64cd;
+
+/* Resets, Layout */
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Helpers */
+.bg--white      { background: $white; }
+.bg--lightgreen { background: $lightgreen; }
+.bg--green      { background: $green; }
+.bg--lightblue  { background: $lightblue; }
+.bg--blue       { background: $blue; }
+.color--white       { color: $white; }
+.color--lightgreen  { color: $lightgreen; }
+.color--green       { color: $green; }
+.color--lightblue   { color: $lightblue; }
+.color--blue        { color: $blue; }
