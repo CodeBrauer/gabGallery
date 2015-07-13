@@ -3,3 +3,4 @@ vendor/
 node_modules
 data
 !data/images/.keepme
+gabGallery.sublime-workspace
