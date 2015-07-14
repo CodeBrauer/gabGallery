@@ -1,21 +1,22 @@
 <?php
-require 'vendor/autoload.php';
+require __DIR__ . '/vendor/autoload.php';
 
 $imagine = new Imagine\Imagick\Imagine();
 
-spl_autoload_register(function ($class) {
-    include 'library/' . $class . '.class.php';
-});
+$app = new \Slim\Slim();
 
-Flight::register('imageFiles', 'ImageFiles');
-
-Flight::route('GET /', function() {
+$app->get('/', function () {
     // render index
 });
 
-Flight::route('GET /images', function() {
-   $files = Flight::imageFiles()->getFiles();
-   Flight::json($files);
+$app->get('/images', function() use ($app) {
+   $files = \GabGallery\ImageFiles::getFiles();
+   $app->response->headers->set('Content-Type', 'application/json');
+   $app->response->setBody(json_encode($files));
 });
 
-Flight::start();
+$app->get('/image/:id(/:info)', function($id, $info = false) {
+    echo "hi!";
+})->conditions(['info' => '(basic|exif)']);
+
+$app->run();

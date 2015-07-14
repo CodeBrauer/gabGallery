@@ -1,7 +1,12 @@
 {
     "require": {
-        "mikecao/flight": "^1.2",
         "imagine/imagine": "^0.6.2",
-        "digitalnature/php-ref": "^1.0"
+        "digitalnature/php-ref": "^1.0",
+        "slim/slim": "^2.6"
+    },
+    "autoload": {
+        "files": [
+            "library/ImageFiles.class.php"
+        ]
     }
 }

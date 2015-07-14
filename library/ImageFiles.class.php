@@ -1,5 +1,7 @@
 <?php
 
+namespace GabGallery;
+
 /**
 * Main Class for the main functions of gabGallery2
 */
@@ -7,7 +9,7 @@ class ImageFiles
 {
     const GG_IMAGE_DIR = 'data/images/'; # don't forget the trailing slash!
 
-    public function getFiles()
+    public static function getFiles()
     {
         if (!file_exists(self::GG_IMAGE_DIR)) {
             mkdir(self::GG_IMAGE_DIR);
@@ -19,16 +21,16 @@ class ImageFiles
         $files = glob( self::GG_IMAGE_DIR.'*.{jpg,png,gif,webp}', GLOB_BRACE );
 
         foreach ($files as $key => $filepath) {
-            $files[$key] = $this->getFileInfo($filepath);
+            $files[$key] = self::getFileInfo($filepath);
         }
 
         return $files;
     }
 
-    private function getFileInfo($filepath)
+    private static function getFileInfo($filepath)
     {
         $filename         = pathinfo($filepath, PATHINFO_FILENAME);
-        $info             = $this->getTags($filename);
+        $info             = self::getTags($filename);
         $info['filepath'] = $filepath;
         $info['info']     = getimagesize($filepath);
         $info['uploaded'] = filemtime($filepath);
@@ -39,7 +41,7 @@ class ImageFiles
         return $info;
     }
 
-    private function getTags($filename) {
+    private static function getTags($filename) {
         $parts = explode('_', $filename);
         $title = str_replace('+', ' ', $parts[0]);
         $tags  = explode('-', $parts[1]);

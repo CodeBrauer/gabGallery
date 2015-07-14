@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fc4eb78a1417aaef08a759276e3c524e",
+    "hash": "187654fd9b1417e7bde39ef5f00ca63d",
     "packages": [
         {
             "name": "digitalnature/php-ref",
@@ -99,28 +99,30 @@
             "time": "2014-11-11 11:36:02"
         },
         {
-            "name": "mikecao/flight",
-            "version": "v1.2.13",
+            "name": "slim/slim",
+            "version": "2.6.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/mikecao/flight.git",
-                "reference": "9b0b527ac5f1b75ad79d151a4510b8ea958769bf"
+                "url": "https://github.com/slimphp/Slim.git",
+                "reference": "20a02782f76830b67ae56a5c08eb1f563c351a37"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mikecao/flight/zipball/9b0b527ac5f1b75ad79d151a4510b8ea958769bf",
-                "reference": "9b0b527ac5f1b75ad79d151a4510b8ea958769bf",
+                "url": "https://api.github.com/repos/slimphp/Slim/zipball/20a02782f76830b67ae56a5c08eb1f563c351a37",
+                "reference": "20a02782f76830b67ae56a5c08eb1f563c351a37",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0"
             },
+            "suggest": {
+                "ext-mcrypt": "Required for HTTP cookie encryption"
+            },
             "type": "library",
             "autoload": {
-                "files": [
-                    "flight/autoload.php",
-                    "flight/Flight.php"
-                ]
+                "psr-0": {
+                    "Slim": "."
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -128,15 +130,19 @@
             ],
             "authors": [
                 {
-                    "name": "Mike Cao",
-                    "email": "mike@mikecao.com",
-                    "homepage": "http://www.mikecao.com/",
-                    "role": "Original Developer"
+                    "name": "Josh Lockhart",
+                    "email": "info@joshlockhart.com",
+                    "homepage": "http://www.joshlockhart.com/"
                 }
             ],
-            "description": "Flight is a fast, simple, extensible framework for PHP. Flight enables you to quickly and easily build RESTful web applications.",
-            "homepage": "http://flightphp.com",
-            "time": "2015-03-24 04:14:58"
+            "description": "Slim Framework, a PHP micro framework",
+            "homepage": "http://github.com/codeguy/Slim",
+            "keywords": [
+                "microframework",
+                "rest",
+                "router"
+            ],
+            "time": "2015-03-08 18:41:17"
         }
     ],
     "packages-dev": [],
