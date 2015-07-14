@@ -30,7 +30,8 @@ class ImageFiles
         $filename         = pathinfo($filepath, PATHINFO_FILENAME);
         $info             = $this->getTags($filename);
         $info['filepath'] = $filepath;
-        $info['info'] = getimagesize($filepath);
+        $info['info']     = getimagesize($filepath);
+        $info['uploaded'] = filemtime($filepath);
 
         $protocol    = stripos($_SERVER['SERVER_PROTOCOL'],'https') === true ? 'https://' : 'http://';
         $info['url'] = $protocol . $_SERVER['HTTP_HOST'] . '/' .  $filepath;
