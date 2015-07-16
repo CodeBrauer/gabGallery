@@ -1,7 +1,5 @@
 <?php
 
-namespace GabGallery;
-
 /**
 * Main Class for the main functions of gabGallery2
 */
@@ -18,13 +16,50 @@ class ImageFiles
             }
         }
 
-        $files = glob( self::GG_IMAGE_DIR.'*.{jpg,png,gif,webp}', GLOB_BRACE );
+        $files = self::getFilePathnames();
 
         foreach ($files as $key => $filepath) {
             $files[$key] = self::getFileInfo($filepath);
         }
 
         return $files;
+    }
+
+    public static function getDetail($id, $mode)
+    {
+        $imagine = new Imagine\Imagick\Imagine();
+
+        $filename = self::getPathName($id);
+        if ($mode == 'basic') {
+            return self::getFileInfo($filename);
+        } else if ($mode == 'exif') {
+            // @todo
+        }
+        
+    }
+
+    public static function getMime($id)
+    {
+        $filename = self::getPathName($id);
+        $finfo    = finfo_open(FILEINFO_MIME_TYPE);
+        $mime     = finfo_file($finfo, $filename);
+        finfo_close($finfo);
+        return $mime;
+    }
+
+    public static function getPathName($id)
+    {
+        foreach (self::getFilePathnames() as $value) {
+            $fid = (int)explode('_', basename($value))[0];
+            if ($fid === (int)$id) {
+                return $value;
+            }
+        }
+    }
+
+    private static function getFilePathnames()
+    {
+        return glob( self::GG_IMAGE_DIR.'*.{jpg,png,gif,webp}', GLOB_BRACE );
     }
 
     private static function getFileInfo($filepath)
@@ -49,7 +84,8 @@ class ImageFiles
         return $info;
     }
 
-    private static function getTags($filename) {
+    private static function getTags($filename)
+    {
         $parts = explode('_', $filename);
         
         $id    = (int)$parts[0];
