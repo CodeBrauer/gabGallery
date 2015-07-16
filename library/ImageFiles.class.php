@@ -35,6 +35,14 @@ class ImageFiles
         $info['info']     = getimagesize($filepath);
         $info['uploaded'] = filemtime($filepath);
 
+        // rename array keys
+        $info['info']['width']        = $info['info']['0']; unset($info['info']['0']);
+        $info['info']['height']       = $info['info']['1']; unset($info['info']['1']);
+        $info['info']['gd_imagetype'] = $info['info']['2']; unset($info['info']['2']);
+        $info['info']['html']         = $info['info']['3']; unset($info['info']['3']);
+
+        ksort($info['info']);
+
         $protocol    = stripos($_SERVER['SERVER_PROTOCOL'],'https') === true ? 'https://' : 'http://';
         $info['url'] = $protocol . $_SERVER['HTTP_HOST'] . '/' .  $filepath;
 
