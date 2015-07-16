@@ -51,9 +51,10 @@ class ImageFiles
 
     private static function getTags($filename) {
         $parts = explode('_', $filename);
-        $title = str_replace('+', ' ', $parts[0]);
-        $tags  = explode('-', $parts[1]);
-        $id    = (int)$parts[2];
+        
+        $id    = (int)$parts[0];
+        $title = str_replace('+', ' ', $parts[1]);
+        $tags  = explode('-', $parts[2]);
 
         return [
             'id'    => $id,
