@@ -1,0 +1,17 @@
+gallery:
+    name: gabGallery
+    title:  - the best stocks.
+    description: my best photos.
+    keywords: photography, stocks, macro, germany, images, pictures
+    license: CC0
+    meta: |
+        <meta name="name" content="content">
+        <meta name="key" content="example">
+
+thumbnails:
+    sizes:
+        small: 150
+        medium: 600
+        large: 2000
+    mode: inset
+
