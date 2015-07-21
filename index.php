@@ -30,4 +30,9 @@ $app->get('/images/:id(/:info)', function($id, $info = false) use ($app, $imagin
     }
 })->conditions(['info' => '(basic|exif)']);
 
+$app->get('/newest(/:limit)', function() use ($app) {
+   $app->response->headers->set('Content-Type', 'application/json');
+   $app->response->setBody(json_encode([]));
+})->conditions(['limit' => '[1-4][0-9]?$|50$']);
+
 $app->run();
