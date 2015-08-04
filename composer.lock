@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "98a75b746314b117058bd22ca91deefc",
+    "hash": "fa23e7efb1bd123ea1457684b374c720",
     "packages": [
         {
             "name": "digitalnature/php-ref",
