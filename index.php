@@ -4,8 +4,10 @@ require __DIR__ . '/vendor/autoload.php';
 $imagine = new Imagine\Imagick\Imagine();
 $app     = new \Slim\Slim();
 
-$app->get('/', function () {
-    // render index
+$app->get('/', function () use ($app) {
+   $info = Main::info();
+   $app->response->headers->set('Content-Type', 'application/json');
+   $app->response->setBody(json_encode($info));
 });
 
 $app->get('/images', function() use ($app) {
