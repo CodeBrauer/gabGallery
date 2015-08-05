@@ -5,6 +5,10 @@ $imagine = new Imagine\Imagick\Imagine();
 $app     = new \Slim\Slim();
 
 $app->get('/', function () use ($app) {
+    $app->render('home.php');
+});
+
+$app->get('/info', function () use ($app) {
    $info = Main::info();
    $app->response->headers->set('Content-Type', 'application/json');
    $app->response->setBody(json_encode($info));
@@ -22,11 +26,9 @@ $app->get('/images/:id(/:info)', function($id, $info = false) use ($app, $imagin
         $info = ImageFiles::getDetail($id, $info);
         $app->response->setBody(json_encode($info));
     } else {
-        // set mime type
         $mimeType = ImageFiles::getMime($id);
         $app->response->headers->set('Content-Type', $mimeType);
         
-        // output raw image data
         $filename = ImageFiles::getPathName($id);
         echo file_get_contents($filename);
     }
