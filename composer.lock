@@ -5,19 +5,20 @@
         "This file is @generated automatically"
     ],
     "hash": "fa23e7efb1bd123ea1457684b374c720",
+    "content-hash": "971495e573ca01f94a99f618079c8010",
     "packages": [
         {
             "name": "digitalnature/php-ref",
-            "version": "v1.0",
+            "version": "1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/digitalnature/php-ref.git",
-                "reference": "99285fe3995e45e7cd9dc2ad8bdc218810fb6208"
+                "reference": "cb0f1ebcd92da2ce749ff81f8c83f50275628ea5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/digitalnature/php-ref/zipball/99285fe3995e45e7cd9dc2ad8bdc218810fb6208",
-                "reference": "99285fe3995e45e7cd9dc2ad8bdc218810fb6208",
+                "url": "https://api.github.com/repos/digitalnature/php-ref/zipball/cb0f1ebcd92da2ce749ff81f8c83f50275628ea5",
+                "reference": "cb0f1ebcd92da2ce749ff81f8c83f50275628ea5",
                 "shasum": ""
             },
             "require": {
@@ -39,20 +40,20 @@
                 "debug",
                 "var_dump"
             ],
-            "time": "2015-05-02 15:06:31"
+            "time": "2015-08-17 01:59:31"
         },
         {
             "name": "imagine/imagine",
-            "version": "0.6.2",
+            "version": "v0.6.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/avalanche123/Imagine.git",
-                "reference": "83ca8babede0e54f935ec09d55a726bf4b0a3f7c"
+                "reference": "149041d2a1b517107bfe270ca2b1a17aa341715d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/avalanche123/Imagine/zipball/83ca8babede0e54f935ec09d55a726bf4b0a3f7c",
-                "reference": "83ca8babede0e54f935ec09d55a726bf4b0a3f7c",
+                "url": "https://api.github.com/repos/avalanche123/Imagine/zipball/149041d2a1b517107bfe270ca2b1a17aa341715d",
+                "reference": "149041d2a1b517107bfe270ca2b1a17aa341715d",
                 "shasum": ""
             },
             "require": {
@@ -96,7 +97,7 @@
                 "image manipulation",
                 "image processing"
             ],
-            "time": "2014-11-11 11:36:02"
+            "time": "2015-09-19 16:54:05"
         },
         {
             "name": "mustangostang/spyc",
